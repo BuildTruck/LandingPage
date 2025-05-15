@@ -1,5 +1,6 @@
 // JavaScript para el funcionamiento del FAQ
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const faqItems = document.querySelectorAll('.faq-item');
     

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuildTruck - Transformando la Gestión en Obra</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
 </head>
 <body>
   <header>
@@ -16,13 +19,16 @@
           <a href="#features">Producto</a>
           <a href="#buildwise">Nosotros</a>
           <a href="#planes">Planes</a>
-          <a href="#" class="rg-button">Registrar</a>
           <a href="#" class="cta-button">Iniciar Sesión</a>
         </nav>
         <div class="hamburger" id="hamburger">
           <span></span>
           <span></span>
           <span></span>
+        </div>
+        <div id="language-switcher">
+          <button data-language="es" onclick="changeLanguage('es')" class="active">ES</button>
+          <button data-language="en" onclick="changeLanguage('en')">EN</button>
         </div>
   </header>
 
@@ -34,16 +40,16 @@
         <div class="hero-overlay"></div>
     
         <div class="hero-content">
-            <h1>TRANSFORMANDO LA<br>
+            <h1 id="heroTitle">TRANSFORMANDO LA<br>
             <span class="hero-highlight">GESTIÓN</span> EN OBRA</h1>
-            <p>Tú obra, bajo control. Con BuildTruck, toma decisiones con datos reales y gana eficiencia todos los días.</p>
+            <p id="heroSubtitle">Tú obra, bajo control. Con BuildTruck, toma decisiones con datos reales y gana eficiencia todos los días.</p>
             <a href="#" class="hero-button">Conoce más</a>
         </div>
 
   </section>
     
   <section id="features" class="features-section">
-        <h2 class="section-title">Características que hacen la diferencia</h2>
+        <h2 id="featuresTitle" class="section-title">Características que hacen la diferencia</h2>
         <div class="features-background">
             <!-- Este es el fondo con cortes -->
             <div class="cut cut1"></div>
@@ -107,7 +113,7 @@
         </div>
         
         <div class="features-cta">
-            <a href="#" class="features-button">Ver cómo funciona</a>
+            <a href="#" id="featuresButton" class="features-button">Ver cómo funciona</a>
         </div>
   </section>
   
@@ -220,7 +226,7 @@
 
   <!-- Sección de Preguntas Frecuentes -->
   <section class="faq-section">
-        <h2>PREGUNTAS FRECUENTES</h2>
+        <h2 id="faqTitle">PREGUNTAS FRECUENTES</h2>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question">
@@ -257,28 +263,28 @@
   <section class="contact">
     <div class="contact-container">
         <div class="contact-form-container">
-            <h2>CONTÁCTANOS</h2>
+            <h2 id="contactTitle">CONTÁCTANOS</h2>
             <form class="contact-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
+                        <label  id="nombre-label" for="nombre">Nombre</label>
                         <input type="text" id="nombre" placeholder="John">
                     </div>
                     <div class="form-group">
-                        <label for="apellido">Apellido</label>
+                        <label id="apellido-label" for="apellido">Apellido</label>
                         <input type="text" id="apellido" placeholder="Doe">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label id="email-label" for="email">Email</label>
                     <input type="email" id="email" placeholder="johndoe@gmail.com">
                 </div>
                 <div class="form-group">
-                    <label for="direccion">Dirección</label>
+                    <label id="direccion-label" for="direccion">Dirección</label>
                     <input type="text" id="direccion" placeholder="Capitol WA">
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripción</label>
+                    <label  id="descripcion-label" for="descripcion">Descripción</label>
                     <textarea id="descripcion" rows="4"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Enviar</button>
@@ -327,10 +333,16 @@
     <div class="footer-bottom">
         <p>&copy; 2025 BuildTrack Todos los derechos reservados</p>
     </div>
+            <div id="language-switcher">
+          <button data-language="es" onclick="changeLanguage('es')" class="active">ES</button>
+          <button data-language="en" onclick="changeLanguage('en')">EN</button>
+        </div>
   </footer>
 
+  
 
 
+<script src="js/i18n.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
 <script src="js\main.js"></script>
