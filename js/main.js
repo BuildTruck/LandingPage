@@ -350,3 +350,141 @@ window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 window.playVideo = playVideo;
 
 
+let currentPlan = {};
+
+function openPaymentModal(planName, price) {
+    currentPlan = { name: planName, price: price };
+    
+    document.getElementById('selectedPlan').textContent = `Plan ${planName}`;
+    document.getElementById('selectedPrice').textContent = `$${price}/mes`;
+    document.getElementById('paymentButtonText').textContent = `Pagar $${price}`;
+    
+    document.getElementById('paymentModal').style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevenir scroll
+}
+
+function closePaymentModal() {
+    document.getElementById('paymentModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restaurar scroll
+    // Limpiar formulario
+    document.querySelector('.payment-form').reset();
+}
+
+// Formateo automático de tarjeta
+document.addEventListener('DOMContentLoaded', function() {
+    const cardNumberInput = document.getElementById('cardNumber');
+    const expiryInput = document.getElementById('expiryDate');
+    const cvvInput = document.getElementById('cvv');
+
+    // Formatear número de tarjeta
+    cardNumberInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+        let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+        if (formattedValue.length > 19) formattedValue = formattedValue.substring(0, 19);
+        e.target.value = formattedValue;
+    });
+
+    // Formatear fecha de expiración
+    expiryInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length >= 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2, 4);
+        }
+        e.target.value = value;
+    });
+
+    // Solo números en CVV
+    cvvInput.addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/[^0-9]/gi, '');
+    });
+});
+
+function processPayment(event) {
+    event.preventDefault();
+    
+    const submitBtn = document.querySelector('.payment-submit-btn');
+    const buttonText = document.getElementById('paymentButtonText');
+    
+    // Simular procesamiento
+    submitBtn.disabled = true;
+    buttonText.textContent = 'Procesando...';
+    
+    setTimeout(() => {
+        buttonText.textContent = 'Pago Exitoso ✓';
+        
+        setTimeout(() => {
+            closePaymentModal();
+            
+            // Mostrar mensaje de éxito
+            alert(`¡Pago completado!\nPlan: ${currentPlan.name}\nMonto: $${currentPlan.price}\n\n¡Bienvenido a BuildTruck!`);
+            
+            // Redirigir a la aplicación
+            window.open('https://buildtruck-99bc0.web.app', '_blank');
+            
+            // Restaurar botón
+            submitBtn.disabled = false;
+            buttonText.textContent = `Pagar $${currentPlan.price}`;
+        }, 1500);
+    }, 2000);
+}
+
+// Cerrar modal al hacer clic fuera
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('paymentModal');
+    if (event.target === modal) {
+        closePaymentModal();
+    }
+});
+function processPayment(event) {
+    event.preventDefault();
+    
+    const submitBtn = document.querySelector('.payment-submit-btn');
+    const buttonText = document.getElementById('paymentButtonText');
+    
+    // Simular procesamiento
+    submitBtn.disabled = true;
+    buttonText.textContent = 'Procesando...';
+    
+    setTimeout(() => {
+        buttonText.textContent = 'Pago Exitoso ✓';
+        
+        setTimeout(() => {
+            closePaymentModal();
+            
+            // Mostrar mensaje bonito en lugar del alert
+            showSuccessMessage();
+            
+            // Redirigir a la aplicación después de 3 segundos
+            setTimeout(() => {
+                window.open('https://buildtruck-99bc0.web.app', '_blank');
+            }, 3000);
+            
+            // Restaurar botón
+            submitBtn.disabled = false;
+            buttonText.textContent = `Pagar $${currentPlan.price}`;
+        }, 1500);
+    }, 2000);
+}
+
+function showSuccessMessage() {
+    // Crear el mensaje de éxito
+    const successDiv = document.createElement('div');
+    successDiv.className = 'success-message';
+    successDiv.innerHTML = `
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h3>¡Pago Completado!</h3>
+            <p><strong>Plan:</strong> ${currentPlan.name}</p>
+            <p><strong>Monto:</strong> $${currentPlan.price}/mes</p>
+            <p class="success-redirect">Redirigiendo a BuildTruck en 3 segundos...</p>
+        </div>
+    `;
+    
+    document.body.appendChild(successDiv);
+    
+    // Remover el mensaje después de 3.5 segundos
+    setTimeout(() => {
+        successDiv.remove();
+    }, 3500);
+}
+
