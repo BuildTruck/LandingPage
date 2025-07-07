@@ -262,4 +262,91 @@ menuLinks.forEach(link => {
     });
 });
 
+// Videos Section JavaScript
+let youtubeApiReady = false;
+
+// Load YouTube IFrame API
+function loadYouTubeAPI() {
+    if (window.YT) {
+        youtubeApiReady = true;
+        initializePlayers();
+        return;
+    }
+    
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+// Called when YouTube API is ready
+function onYouTubeIframeAPIReady() {
+    youtubeApiReady = true;
+    initializePlayers();
+}
+
+// Initialize YouTube players
+function initializePlayers() {
+    if (!youtubeApiReady) return;
+
+    const iframes = document.querySelectorAll('.video-iframe');
+    iframes.forEach((iframe) => {
+        const loadingIndicator = iframe.parentElement.querySelector('.loading-indicator');
+        
+        iframe.onload = function() {
+            setTimeout(() => {
+                loadingIndicator.style.display = 'none';
+                iframe.classList.add('loaded');
+            }, 1000);
+        };
+    });
+}
+
+// Play video function
+function playVideo(videoId) {
+    const iframe = document.getElementById(videoId);
+    const overlay = iframe.parentElement.querySelector('.video-overlay');
+    
+    overlay.classList.add('hidden');
+    
+    const src = iframe.src;
+    const videoIdMatch = src.match(/embed\/([^?]+)/);
+    if (videoIdMatch) {
+        const youtubeVideoId = videoIdMatch[1];
+        iframe.src = `https://www.youtube.com/embed/${youtubeVideoId}?enablejsapi=1&autoplay=1&mute=0&rel=0&modestbranding=1`;
+    }
+}
+
+// Setup intersection observer for videos
+function setupVideoIntersectionObserver() {
+    const videoCards = document.querySelectorAll('.video-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const iframe = entry.target.querySelector('.video-iframe');
+                if (!iframe.classList.contains('loaded')) {
+                    iframe.src = iframe.src;
+                }
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    videoCards.forEach(card => {
+        observer.observe(card);
+    });
+}
+
+// Initialize videos when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    loadYouTubeAPI();
+    setupVideoIntersectionObserver();
+});
+
+// Expose functions to global scope
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+window.playVideo = playVideo;
+
 

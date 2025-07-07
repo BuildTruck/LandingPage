@@ -43,7 +43,7 @@
             <h1 id="heroTitle">TRANSFORMANDO LA<br>
             <span class="hero-highlight">GESTIÓN</span> EN OBRA</h1>
             <p id="heroSubtitle">Tú obra, bajo control. Con BuildTruck, toma decisiones con datos reales y gana eficiencia todos los días.</p>
-            <a href="#" class="hero-button">Conoce más</a>
+            <a href="#videos" class="hero-button" id="heroButton">Conoce más</a>
         </div>
 
   </section>
@@ -113,7 +113,7 @@
         </div>
         
         <div class="features-cta">
-            <a href="#" id="featuresButton" class="features-button">Ver cómo funciona</a>
+            <a href="#contact" id="featuresButton" class="features-button">Ver cómo funciona</a>
         </div>
   </section>
   
@@ -171,6 +171,62 @@
 
     </div>
   </section>
+  <!-- Videos Section -->
+<section id="videos" class="videos-section">
+    <h2 id="videosTitle" class="videos-title">CONOCE MÁS</h2>
+    
+    <div class="videos-container">
+        <!-- Video 1: About the Team -->
+        <div class="video-card">
+            <div class="video-header">
+                <h3 id="teamVideoTitle">Sobre el Equipo</h3>
+            </div>
+            <div class="video-wrapper">
+                <div class="loading-indicator"></div>
+                <div class="video-overlay" onclick="playVideo('teamVideo')">
+                    <div class="play-button"></div>
+                </div>
+                <iframe 
+                    id="teamVideo"
+                    class="video-iframe"
+                    src="https://www.youtube.com/embed/zwnLMU5Rdeg?enablejsapi=1&mute=1&rel=0&modestbranding=1&autoplay=1&loop=1&playlist=zwnLMU5Rdeg"
+                    title="About the Team"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-description">
+                <p id="teamVideoDesc">Conoce al equipo detrás de BuildTruck y nuestra visión para transformar la gestión en obra.</p>
+            </div>
+        </div>
+
+        <!-- Video 2: About the Product -->
+        <div class="video-card">
+            <div class="video-header">
+                <h3 id="productVideoTitle">Sobre el Producto</h3>
+            </div>
+            <div class="video-wrapper">
+                <div class="loading-indicator"></div>
+                <div class="video-overlay" onclick="playVideo('productVideo')">
+                    <div class="play-button"></div>
+                </div>
+                <iframe 
+                    id="productVideo"
+                    class="video-iframe"
+                    src="https://www.youtube.com/embed/ovXa7Y4YIWI?enablejsapi=1&mute=1&rel=0&modestbranding=1&autoplay=1&loop=1&playlist=ovXa7Y4YIWI"
+                    title="About the Product"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-description">
+                <p id="productVideoDesc">Descubre cómo BuildTruck puede revolucionar la gestión de tu obra con tecnología inteligente.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
   <section id="planes" class="planes-section">
         <h2 class="planes-title">PLANES</h2>
@@ -260,7 +316,7 @@
         </div>
   </section>
 
-  <section class="contact">
+  <section id="contact" class="contact">
     <div class="contact-container">
         <div class="contact-form-container">
             <h2 id="contactTitle">CONTÁCTANOS</h2>

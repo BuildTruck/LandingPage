@@ -11,6 +11,11 @@
     "formEmail": "Email",
     "formAddress": "Address",
     "formDescription": "Description",
-    "formSubmit": "Submit"
+    "formSubmit": "Submit",
+    "videosTitle": "LEARN MORE",
+    "teamVideoTitle": "About the Team", 
+    "productVideoTitle": "About the Product",
+    "teamVideoDesc": "Meet the team behind BuildTruck and our vision to transform construction site management.",
+    "productVideoDesc": "Discover how BuildTruck can revolutionize your construction site management with intelligent technology."
   }
   

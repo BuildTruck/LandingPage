@@ -11,6 +11,12 @@
     "formEmail": "Email",
     "formAddress": "Dirección",
     "formDescription": "Descripción",
-    "formSubmit": "Enviar"
+    "formSubmit": "Enviar",
+    "videosTitle": "CONOCE MÁS",
+    "teamVideoTitle": "Sobre el Equipo",
+    "productVideoTitle": "Sobre el Producto",
+    "teamVideoDesc": "Conoce al equipo detrás de BuildTruck y nuestra visión para transformar la gestión en obra.",
+    "productVideoDesc": "Descubre cómo BuildTruck puede revolucionar la gestión de tu obra con tecnología inteligente."
+    
   }
   
