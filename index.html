@@ -43,7 +43,7 @@
             <h1 id="heroTitle">TRANSFORMANDO LA<br>
             <span class="hero-highlight">GESTIÓN</span> EN OBRA</h1>
             <p id="heroSubtitle">Tú obra, bajo control. Con BuildTruck, toma decisiones con datos reales y gana eficiencia todos los días.</p>
-            <a href="#" class="hero-button">Conoce más</a>
+            <a href="#videos" class="hero-button" id="heroButton">Conoce más</a>
         </div>
 
   </section>
@@ -113,7 +113,7 @@
         </div>
         
         <div class="features-cta">
-            <a href="#" id="featuresButton" class="features-button">Ver cómo funciona</a>
+            <a href="#contact" id="featuresButton" class="features-button">Ver cómo funciona</a>
         </div>
   </section>
   
@@ -171,58 +171,123 @@
 
     </div>
   </section>
-
-  <section id="planes" class="planes-section">
-        <h2 class="planes-title">PLANES</h2>
-        
-        <div class="planes-container">
-          <!-- Plan Básico -->
-          <div class="plan-card">
-            <h3 class="plan-title">Plan Básico</h3>
-            <p class="plan-price">50$</p>
-            <ul class="plan-features">
-              <li>Gestión de inventario</li>
-              <li>Registro de personal y asistencia</li>
-              <li>Generación de reportes diarios/semanales</li>
-              <li>Exportación en PDF/Excel</li>
-              <li>Soporte vía chat (horario laboral)</li>
-              <li>Alertas automáticas por bajo stock</li>
-            </ul>
-            <div class="card-corner"></div>
-          </div>
-          
-          <!-- Plan Pro -->
-          <div class="plan-card">
-            <h3 class="plan-title">Plan Pro</h3>
-            <p class="plan-price">90$</p>
-            <ul class="plan-features">
-              <li>Alertas automáticas por bajo stock</li>
-              <li>Asignación de personal por proyecto</li>
-              <li>Control de múltiples obras desde una sola cuenta</li>
-              <li>Reportes comparativos entre proyectos</li>
-              <li>Soporte prioritario por chat y teléfono</li>
-              <li>Capacitación online incluida</li>
-            </ul>
-            <div class="card-corner"></div>
-          </div>
-          
-          <!-- Plan Empresarial -->
-          <div class="plan-card">
-            <h3 class="plan-title">Plan Empresarial</h3>
-            <p class="plan-price">150$</p>
-            <ul class="plan-features">
-              <li>Personalización de módulos según tipo de obra</li>
-              <li>Integración con ERP/contabilidad (bajo solicitud)</li>
-              <li>Soporte técnico 24/7</li>
-              <li>Acceso multiusuario con roles personalizados</li>
-              <li>Panel administrativo centralizado para múltiples sedes</li>
-              <li>Consultoría en digitalización de procesos operativos</li>
-            </ul>
-            <div class="card-corner"></div>
-          </div>
+  <!-- Videos Section -->
+<section id="videos" class="videos-section">
+    <h2 id="videosTitle" class="videos-title">CONOCE MÁS</h2>
+    
+    <div class="videos-container">
+        <!-- Video 1: About the Team -->
+        <div class="video-card">
+            <div class="video-header">
+                <h3 id="teamVideoTitle">Sobre el Equipo</h3>
+            </div>
+            <div class="video-wrapper">
+                <div class="loading-indicator"></div>
+                <div class="video-overlay" onclick="playVideo('teamVideo')">
+                    <div class="play-button"></div>
+                </div>
+                <iframe 
+                    id="teamVideo"
+                    class="video-iframe"
+                    src="https://www.youtube.com/embed/zwnLMU5Rdeg?enablejsapi=1&mute=1&rel=0&modestbranding=1&autoplay=1&loop=1&playlist=zwnLMU5Rdeg"
+                    title="About the Team"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-description">
+                <p id="teamVideoDesc">Conoce al equipo detrás de BuildTruck y nuestra visión para transformar la gestión en obra.</p>
+            </div>
         </div>
-  </section>
 
+        <!-- Video 2: About the Product -->
+        <div class="video-card">
+            <div class="video-header">
+                <h3 id="productVideoTitle">Sobre el Producto</h3>
+            </div>
+            <div class="video-wrapper">
+                <div class="loading-indicator"></div>
+                <div class="video-overlay" onclick="playVideo('productVideo')">
+                    <div class="play-button"></div>
+                </div>
+                <iframe 
+                    id="productVideo"
+                    class="video-iframe"
+                    src="https://www.youtube.com/embed/ovXa7Y4YIWI?enablejsapi=1&mute=1&rel=0&modestbranding=1&autoplay=1&loop=1&playlist=ovXa7Y4YIWI"
+                    title="About the Product"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-description">
+                <p id="productVideoDesc">Descubre cómo BuildTruck puede revolucionar la gestión de tu obra con tecnología inteligente.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="planes" class="planes-section">
+       <h2 class="planes-title">PLANES</h2>
+       
+       <div class="planes-container">
+         <!-- Plan Básico -->
+         <div class="plan-card">
+           <div class="plan-content">
+             <h3 class="plan-title">Plan Básico</h3>
+             <p class="plan-price">50$</p>
+             <ul class="plan-features">
+               <li>Gestión de inventario</li>
+               <li>Registro de personal y asistencia</li>
+               <li>Generación de reportes diarios/semanales</li>
+               <li>Exportación en PDF/Excel</li>
+               <li>Soporte vía chat (horario laboral)</li>
+               <li>Alertas automáticas por bajo stock</li>
+             </ul>
+           </div>
+           <button class="plan-button" onclick="openPaymentModal('Básico', 50)">Seleccionar Plan</button>
+           <div class="card-corner"></div>
+         </div>
+         
+         <!-- Plan Pro -->
+         <div class="plan-card">
+           <div class="plan-content">
+             <h3 class="plan-title">Plan Pro</h3>
+             <p class="plan-price">90$</p>
+             <ul class="plan-features">
+               <li>Alertas automáticas por bajo stock</li>
+               <li>Asignación de personal por proyecto</li>
+               <li>Control de múltiples obras desde una sola cuenta</li>
+               <li>Reportes comparativos entre proyectos</li>
+               <li>Soporte prioritario por chat y teléfono</li>
+               <li>Capacitación online incluida</li>
+             </ul>
+           </div>
+           <button class="plan-button" onclick="openPaymentModal('Pro', 90)">Seleccionar Plan</button>
+           <div class="card-corner"></div>
+         </div>
+         
+         <!-- Plan Empresarial -->
+         <div class="plan-card">
+           <div class="plan-content">
+             <h3 class="plan-title">Plan Empresarial</h3>
+             <p class="plan-price">150$</p>
+             <ul class="plan-features">
+               <li>Personalización de módulos según tipo de obra</li>
+               <li>Integración con ERP/contabilidad (bajo solicitud)</li>
+               <li>Soporte técnico 24/7</li>
+               <li>Acceso multiusuario con roles personalizados</li>
+               <li>Panel administrativo centralizado para múltiples sedes</li>
+               <li>Consultoría en digitalización de procesos operativos</li>
+             </ul>
+           </div>
+           <button class="plan-button" onclick="openPaymentModal('Empresarial', 150)">Seleccionar Plan</button>
+           <div class="card-corner"></div>
+         </div>
+       </div>
+</section>
+     
 
   <!-- Sección de Preguntas Frecuentes -->
   <section class="faq-section">
@@ -260,7 +325,7 @@
         </div>
   </section>
 
-  <section class="contact">
+  <section id="contact" class="contact">
     <div class="contact-container">
         <div class="contact-form-container">
             <h2 id="contactTitle">CONTÁCTANOS</h2>
@@ -315,6 +380,55 @@
 
     </div>
   </section>
+  <!-- Modal de Pago -->
+<div id="paymentModal" class="payment-modal">
+    <div class="payment-modal-content">
+        <span class="payment-close" onclick="closePaymentModal()">&times;</span>
+        <h2 id="paymentTitle">Procesar Pago</h2>
+        
+        <div class="payment-plan-info">
+            <h3 id="selectedPlan">Plan Básico</h3>
+            <p id="selectedPrice">$50/mes</p>
+        </div>
+
+        <form class="payment-form" onsubmit="processPayment(event)">
+            <div class="form-group">
+                <label for="cardholderName">Nombre del Titular</label>
+                <input type="text" id="cardholderName" placeholder="Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cardNumber">Número de Tarjeta</label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="expiryDate">Fecha de Expiración</label>
+                    <input type="text" id="expiryDate" placeholder="MM/AA" maxlength="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="billingAddress">Dirección de Facturación</label>
+                <input type="text" id="billingAddress" placeholder="Av. Principal 123, Lima" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="juan@email.com" required>
+            </div>
+
+            <button type="submit" class="payment-submit-btn">
+                <span id="paymentButtonText">Pagar Ahora</span>
+            </button>
+        </form>
+    </div>
+</div>
 
   <footer class="footer">
     <div class="footer-content">

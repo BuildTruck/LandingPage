@@ -1,4 +1,4 @@
-// js/i18n.js
+// js/i18n.js - VERSIÓN CORREGIDA
 $(document).ready(function() {
     // Complete translations for both languages
     const resources = {
@@ -39,6 +39,13 @@ $(document).ready(function() {
           "feature4Item1": "Low stock alerts",
           "feature4Item2": "Field incident notifications",
           "feature4Item3": "Critical pending tasks monitoring",
+          
+          // Videos Section - AGREGADO AQUÍ
+          "videosTitle": "LEARN MORE",
+          "teamVideoTitle": "About the Team",
+          "productVideoTitle": "About the Product",
+          "teamVideoDesc": "Meet the team behind BuildTruck and our vision to transform construction site management.",
+          "productVideoDesc": "Discover how BuildTruck can revolutionize your construction site management with intelligent technology.",
           
           // BuildWise Section
           "buildwiseTitle": "A solution created by engineers, for construction",
@@ -136,6 +143,13 @@ $(document).ready(function() {
           "feature4Item1": "Alertas por bajo stock",
           "feature4Item2": "Notificaciones de incidencias en campo",
           "feature4Item3": "Seguimiento de pendientes críticos",
+          
+          // Videos Section - AGREGADO AQUÍ
+          "videosTitle": "CONOCE MÁS",
+          "teamVideoTitle": "Sobre el Equipo",
+          "productVideoTitle": "Sobre el Producto",
+          "teamVideoDesc": "Conoce al equipo detrás de BuildTruck y nuestra visión para transformar la gestión en obra.",
+          "productVideoDesc": "Descubre cómo BuildTruck puede revolucionar la gestión de tu obra con tecnología inteligente.",
           
           // Sección BuildWise
           "buildwiseTitle": "Una solución creada por ingenieros, para la construcción",
@@ -248,6 +262,13 @@ $(document).ready(function() {
       $('.feature-card:nth-child(4) li:nth-child(1)').text(i18next.t('feature4Item1'));
       $('.feature-card:nth-child(4) li:nth-child(2)').text(i18next.t('feature4Item2'));
       $('.feature-card:nth-child(4) li:nth-child(3)').text(i18next.t('feature4Item3'));
+      
+      // Videos Section - AGREGADO AQUÍ CORRECTAMENTE
+      $('#videosTitle').text(i18next.t('videosTitle'));
+      $('#teamVideoTitle').text(i18next.t('teamVideoTitle'));
+      $('#productVideoTitle').text(i18next.t('productVideoTitle'));
+      $('#teamVideoDesc').text(i18next.t('teamVideoDesc'));
+      $('#productVideoDesc').text(i18next.t('productVideoDesc'));
       
       // BuildWise Section
       $('.buildwise-title').text(i18next.t('buildwiseTitle'));
