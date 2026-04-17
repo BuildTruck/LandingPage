@@ -1,3 +1,6 @@
+### Link de visualización
+[https://buildtruck.github.io/LandingPage/](https://buildtruck.github.io/LandingPage/)
+
 ### Créditos de código reutilizado
 
 La animación de grúa utilizada en la sección inferior fue tomada y adaptada de:
